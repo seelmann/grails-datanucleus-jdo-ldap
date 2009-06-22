@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+
+    <persistence-unit name="jdo-ldap">
+    	<!-- Put FQCNs of your domain classes here -->
+    	<!-- 
+        <class>com.example.User</class>
+        -->
+        <properties>
+            <property name="javax.jdo.PersistenceManagerFactoryClass"
+                value="org.datanucleus.jdo.JDOPersistenceManagerFactory"/>
+            <property name="javax.jdo.option.ConnectionDriverName" value="com.sun.jndi.ldap.LdapCtxFactory"/>
+            <property name="javax.jdo.option.ConnectionURL" value="ldap://localhost:10389"/>
+            <property name="javax.jdo.option.ConnectionUserName" value="uid=admin,ou=system"/>
+            <property name="javax.jdo.option.ConnectionPassword" value="secret"/>
+            <property name="datanucleus.connectionPoolingType" value="JNDI"/>
+           	<property name="datanucleus.connectionPool.initialPoolSize" value="1"/>
+            <property name="datanucleus.connectionPool.maxPoolSize" value="10"/>
+            <property name="javax.jdo.option.DetachAllOnCommit" value="true"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

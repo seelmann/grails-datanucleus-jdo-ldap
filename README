@@ -1,0 +1,28 @@
+Tutorial:
+grails create-app xyz
+cd xyz
+grails uninstall-plugin hibernate
+grails install-plugin datanucleus-jdo-ldap
+
+grails create-domain-class com.example.User
+edit user class:
+- edit "table": container of objects
+- edit "schema": object classes of objects
+- convention: Primary Key must be called "id"
+- edit "Column" of id
+- add additional attributes
+add the FQCN to persistence.xml
+grails generate-all com.example.User
+grails run-app
+
+
+
+Known Issues:
+- Must have String field "id" which becomes the RDN
+- LDAP doesn't support datastore-identity, thus the id is visible and must be provided.
+  It is possible to use a auto-generated id.
+- Must manually update persistence.xml
+- Transaction handling in generated controllers
+
+
+

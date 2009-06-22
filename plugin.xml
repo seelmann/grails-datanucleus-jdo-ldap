@@ -1,0 +1,13 @@
+<plugin name='datanucleus-jdo-ldap' version='0.1' grailsVersion='1.1.1 &gt; *'>
+  <author>Stefan Seelmann</author>
+  <authorEmail>grails@stefan-seelmann.de</authorEmail>
+  <title>Grails DataNucleus JDO LDAP Plugin</title>
+  <description>\
+JDO persistence to an LDAP datastore using DataNucleus.
+</description>
+  <resources>
+    <resource>UrlMappings</resource>
+    <resource>DataSource</resource>
+  </resources>
+  <dependencies />
+</plugin>
